@@ -2,7 +2,7 @@
   "private": true,
   "name": "adaptiveblazor.assets",
   "source": "src/index.js",
-  "main": "dist/AdaptiveBlazor.lib.module.js",
+  "main": "dist/AdaptiveBlazor.Components.lib.module.js",
   "scripts": {
     "build": "node ./esbuild.config.mjs",
     "clean": "rimraf ./dist"

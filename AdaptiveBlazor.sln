@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdaptiveBlazor.Components",
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "AdaptiveBlazor.Assets", "src\AdaptiveBlazor.Assets\AdaptiveBlazor.Assets.esproj", "{09F55A4F-9173-4273-8DE3-EADA1ADDA724}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{2C6CCAC2-F9EC-4529-9E19-56BB4700D670}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdaptiveBlazor.Demo", "examples\AdaptiveBlazor.Demo\AdaptiveBlazor.Demo.csproj", "{AE96E9AB-D988-4043-B57B-A423517EA5F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,9 +32,14 @@ Global
 		{09F55A4F-9173-4273-8DE3-EADA1ADDA724}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09F55A4F-9173-4273-8DE3-EADA1ADDA724}.Release|Any CPU.Build.0 = Release|Any CPU
 		{09F55A4F-9173-4273-8DE3-EADA1ADDA724}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{AE96E9AB-D988-4043-B57B-A423517EA5F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE96E9AB-D988-4043-B57B-A423517EA5F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE96E9AB-D988-4043-B57B-A423517EA5F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE96E9AB-D988-4043-B57B-A423517EA5F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5E82CC46-FE9F-4F43-A9AC-5D0895509D6D} = {138569F3-D349-48BF-91F5-D30BE9A24A5F}
 		{09F55A4F-9173-4273-8DE3-EADA1ADDA724} = {138569F3-D349-48BF-91F5-D30BE9A24A5F}
+		{AE96E9AB-D988-4043-B57B-A423517EA5F4} = {2C6CCAC2-F9EC-4529-9E19-56BB4700D670}
 	EndGlobalSection
 EndGlobal

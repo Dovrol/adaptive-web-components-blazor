@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\AdaptiveBlazor.Components\AdaptiveBlazor.Components.csproj" />
+    <ProjectReference Include="..\..\src\AdaptiveBlazor\AdaptiveBlazor.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

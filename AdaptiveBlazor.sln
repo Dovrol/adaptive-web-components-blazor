@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{138569F3-D349-48BF-91F5-D30BE9A24A5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdaptiveBlazor.Components", "src\AdaptiveBlazor.Components\AdaptiveBlazor.Components.csproj", "{5E82CC46-FE9F-4F43-A9AC-5D0895509D6D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdaptiveBlazor", "src\AdaptiveBlazor\AdaptiveBlazor.csproj", "{5E82CC46-FE9F-4F43-A9AC-5D0895509D6D}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "AdaptiveBlazor.Assets", "src\AdaptiveBlazor.Assets\AdaptiveBlazor.Assets.esproj", "{09F55A4F-9173-4273-8DE3-EADA1ADDA724}"
 EndProject

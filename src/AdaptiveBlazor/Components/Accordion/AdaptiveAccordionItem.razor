@@ -1,0 +1,36 @@
+@namespace AdaptiveBlazor.Components
+@inherits AdaptiveComponentBase
+
+<adaptive-accordion-item id="@Id" 
+                    class="@Class" 
+                    style="@Style"
+                    heading-level="@HeadingLevel"
+                    expanded="@Expanded"
+                    disabled="@Disabled"
+                    @attributes="AdditionalAttributes">
+    @Slots
+    @ChildContent
+</adaptive-accordion-item>
+
+@code
+{
+    protected override void OnInitialized()
+    {
+        Id ??= Guid.NewGuid().ToString();
+        Parent?.Additem(this);
+    }
+
+    [CascadingParameter] public AdaptiveAccordion? Parent { get; set; }
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+
+    [Parameter] public int? HeadingLevel { get; set; }
+    [Parameter] public bool Expanded { get; set; }
+    [Parameter] public bool Disabled { get; set; }
+
+    // Slots
+    [Parameter, Slot("heading")] public RenderFragment? HeadingSlot { get; set; }
+    [Parameter, Slot("start")] public RenderFragment? StartSlot { get; set; }
+    [Parameter, Slot("end")] public RenderFragment? EndSlot { get; set; }
+    [Parameter, Slot("expanded-icon")] public RenderFragment? ExpandedIconSlot { get; set; }
+    [Parameter, Slot("collapsed-icon")] public RenderFragment? CollapsedIconSlot { get; set; }
+}

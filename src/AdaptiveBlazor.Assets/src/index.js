@@ -5,3 +5,15 @@ import { DesignToken } from "@microsoft/fast-foundation";
 // This must be called during initialization for the Design Tokens to be setup so the component styling is applied.
 DesignToken.registerDefaultStyleTarget();
 AdaptiveDesignSystem.defineComponents(AllComponents);
+
+
+export function afterWebStarted(blazor) {
+    blazor.registerCustomEventType('accordionchange', {
+        browserEventName: 'change',
+        createEventArgs: event => {
+            return { 
+                activeId: event.detail 
+            };
+        }
+    });
+}

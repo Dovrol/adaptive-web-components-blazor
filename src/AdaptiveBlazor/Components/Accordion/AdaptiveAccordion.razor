@@ -1,0 +1,35 @@
+@namespace AdaptiveBlazor.Components
+@inherits AdaptiveComponentBase
+
+<CascadingValue Value="@this" IsFixed>
+    <adaptive-accordion id="@Id" 
+                        class="@Class" 
+                        style="@Style"
+                        expand-mode="@ExpandMode?.ToAttribute()"
+                        @onaccordionchange="HandleAccordionChange"
+                        @attributes="AdditionalAttributes">
+        @ChildContent
+    </adaptive-accordion>
+</CascadingValue>
+
+@code
+{
+    [Parameter] public AccordionExpandMode? ExpandMode { get; set; }
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+    [Parameter] public EventCallback<AdaptiveAccordionItem> OnChange { get; set; }
+
+    private List<AdaptiveAccordionItem> items = [];
+    internal void Additem(AdaptiveAccordionItem item)
+    {
+        items.Add(item);
+    }
+
+    private async Task HandleAccordionChange(AccordionChangeEventArgs args)
+    {
+        var item = items.FirstOrDefault(x => x.Id == args.ActiveId);
+        if (item is not null)
+        {
+            await OnChange.InvokeAsync(item);
+        }
+    }
+}

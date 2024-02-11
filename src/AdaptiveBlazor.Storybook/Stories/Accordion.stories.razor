@@ -1,0 +1,78 @@
+@attribute [Stories("Components/Accordion/Accordion")]
+
+<Stories TComponent="@AdaptiveAccordion">
+    <ArgType For="_ =>_.ExpandMode" Control="ControlType.Select" />
+
+    <Story Name="Single item expanded">
+        <Arguments>
+            <Arg For="_ => _.ExpandMode" Value="AccordionExpandMode.Single" />
+        </Arguments>
+        <Template>
+            <AdaptiveAccordion @attributes="context.Args">
+                <AdaptiveAccordionItem Expanded>
+                    <HeadingSlot>
+                        Section 1
+                    </HeadingSlot>
+                    <ChildContent>
+                        @lorem
+                    </ChildContent>
+                </AdaptiveAccordionItem>
+                <AdaptiveAccordionItem>
+                    <HeadingSlot>
+                        Section 2
+                    </HeadingSlot>
+                    <ChildContent>
+                        @lorem
+                    </ChildContent>
+                </AdaptiveAccordionItem>
+                <AdaptiveAccordionItem>
+                    <HeadingSlot>
+                        Section 3
+                    </HeadingSlot>
+                    <ChildContent>
+                        @lorem
+                    </ChildContent>
+                </AdaptiveAccordionItem>
+            </AdaptiveAccordion>
+        </Template>
+    </Story>
+
+    <Story Name="Multiple items expanded">
+        <Arguments>
+            <Arg For="_ => _.ExpandMode" Value="AccordionExpandMode.Multi" />
+        </Arguments>
+        <Template>
+            <AdaptiveAccordion @attributes="context.Args">
+                <AdaptiveAccordionItem Expanded>
+                    <HeadingSlot>
+                        Section 1
+                    </HeadingSlot>
+                    <ChildContent>
+                        @lorem
+                    </ChildContent>
+                </AdaptiveAccordionItem>
+                <AdaptiveAccordionItem Expanded>
+                    <HeadingSlot>
+                        Section 2
+                    </HeadingSlot>
+                    <ChildContent>
+                        @lorem
+                    </ChildContent>
+                </AdaptiveAccordionItem>
+                <AdaptiveAccordionItem Expanded>
+                    <HeadingSlot>
+                        Section 3
+                    </HeadingSlot>
+                    <ChildContent>
+                        @lorem
+                    </ChildContent>
+                </AdaptiveAccordionItem>
+            </AdaptiveAccordion>
+        </Template>
+    </Story>
+</Stories>
+
+@code
+{
+    private string lorem = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, dicta. Et voluptatum, illo sapiente culpa iste vero animi nesciunt at placeat repellendus earum illum omnis ducimus rem iusto commodi nihil.";
+}

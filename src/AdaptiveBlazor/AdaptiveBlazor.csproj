@@ -8,6 +8,16 @@
     <NoWarn>1591</NoWarn>
   </PropertyGroup>
 
+  <Import Project="../../Version.props" />
+
+  <PropertyGroup>
+    <PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
+    <Description>Blazor wrapper around Adaptive Web Components.</Description>
+    <PackageTags>web-components component-library blazor adaptive-web-components adaptive-ui microsoft-fast adaptive-web-design</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+  </PropertyGroup>
+
 
   <ItemGroup>
     <SupportedPlatform Include="browser" />

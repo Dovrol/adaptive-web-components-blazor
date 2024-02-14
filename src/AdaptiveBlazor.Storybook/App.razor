@@ -1,3 +1,6 @@
-﻿<BlazingStoryApp Assemblies="new []{ typeof(App).Assembly }" DefaultLayout="typeof(DefaultLayout)" 
-    EnableHotReloading AvailableColorSchemes="AvailableColorSchemes.Light" Title="Adaptive Blazor">
+﻿@using System.Reflection
+
+<BlazingStoryApp Assemblies="new []{ typeof(App).Assembly }" DefaultLayout="typeof(DefaultLayout)" 
+    EnableHotReloading AvailableColorSchemes="AvailableColorSchemes.Light" 
+    Title="@($"Adaptive Blazor {Assembly.GetEntryAssembly()?.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion}")">
 </BlazingStoryApp>

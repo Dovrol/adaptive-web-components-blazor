@@ -1,0 +1,62 @@
+name: Build and push nugets to github packages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+env:
+  DOTNET_VERSION: "8.0.x"
+  NODE_VERSION: 20
+  NUGET_ORG: https://api.nuget.org/v3/index.json
+
+jobs:
+  pack-nuget:
+    runs-on: ubuntu-latest
+    env:
+      PROJECT_PATH: "src/AdaptiveBlazor/AdaptiveBlazor.csproj" 
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version:  ${{ env.NODE_VERSION }}
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build ${{ env.PROJECT_PATH }} --no-restore -c Release
+
+      - name: Pack
+        run: dotnet pack ${{ env.PROJECT_PATH }} --no-build -c Release -o ./artifacts/packages
+
+      - name: Upload nugets as artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: packages
+          path: ./artifacts/packages
+
+  push-to-nuget-org:
+    needs: pack-nuget
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download packages
+        uses: actions/download-artifact@v3
+        with:
+          name: packages
+
+      - name: Setup NuGet.exe
+        uses: nuget/setup-nuget@v1
+        with:
+          nuget-version: 6.8.0
+
+      - name: Push nugets to github packages
+        run: nuget push "*.nupkg" -ApiKey ${{ secrets.NUGET_ORG_KEY }} -Source ${{ env.NUGET_ORG }} -SkipDuplicate

@@ -1,0 +1,56 @@
+﻿@page "/"
+@rendermode InteractiveServer
+
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<h2>
+    Selected item is: @SelectedItem
+</h2>
+
+
+<AdaptiveAccordion ExpandMode="@AccordionExpandMode.Multi" OnChange="@AccordionClick">
+    <AdaptiveAccordionItem>
+        <HeadingSlot>
+            Section 1
+        </HeadingSlot>
+        <StartSlot>
+            <strong>Important !</strong>
+        </StartSlot>
+        <ChildContent>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+        </ChildContent>
+    </AdaptiveAccordionItem>
+    <AdaptiveAccordionItem>
+        <HeadingSlot>
+            Section 2
+        </HeadingSlot>
+        <StartSlot>
+            <strong>TODO</strong>
+        </StartSlot>
+        <ChildContent>
+            Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.
+        </ChildContent>
+    </AdaptiveAccordionItem>
+    <AdaptiveAccordionItem Expanded>
+        <HeadingSlot>
+            Section 3
+        </HeadingSlot>
+        <ChildContent>
+            "Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.
+        </ChildContent>
+    </AdaptiveAccordionItem>
+</AdaptiveAccordion>
+
+@code {
+    private string? SelectedItem;
+
+    private void AccordionClick(AdaptiveAccordionItem item)
+    {
+        SelectedItem = item.Id;
+    }
+}

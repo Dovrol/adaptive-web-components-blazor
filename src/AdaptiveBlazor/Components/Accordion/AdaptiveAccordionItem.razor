@@ -1,0 +1,13 @@
+@namespace AdaptiveBlazor.Components
+@inherits AdaptiveComponentBase
+
+<adaptive-accordion-item id="@Id" 
+                    class="@Class" 
+                    style="@Style"
+                    heading-level="@HeadingLevel"
+                    expanded="@Expanded"
+                    disabled="@Disabled"
+                    @attributes="AdditionalAttributes">
+    @Slots
+    @ChildContent
+</adaptive-accordion-item>

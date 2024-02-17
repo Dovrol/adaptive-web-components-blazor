@@ -1,0 +1,9 @@
+<Project>
+  <PropertyGroup>
+    <Version>0.1.0-alpha.1</Version>
+    <Copyright>Copyright © 2024 Wiktor Kubis</Copyright>
+    <Authors>Wiktor Kubis</Authors>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/dovrol/adaptive-blazor/</RepositoryUrl>
+  </PropertyGroup>
+</Project>

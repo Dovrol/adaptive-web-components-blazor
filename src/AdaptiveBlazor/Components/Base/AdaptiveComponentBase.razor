@@ -1,0 +1,42 @@
+@using Microsoft.AspNetCore.Components.Rendering
+@using System.Reflection;
+
+@namespace AdaptiveBlazor.Components
+@inherits ComponentBase
+
+
+@code
+{
+    private Dictionary<string, RenderFragment?> ComponentSlots
+    {
+        get {
+            var slots = new Dictionary<string, RenderFragment?>();
+
+            var properties = GetType().GetProperties()
+                .Where(prop => Attribute.IsDefined(prop, typeof(SlotAttribute)));
+
+            foreach (var prop in properties)
+            {
+                var value = prop.GetValue(this);
+                var attribute = prop.GetCustomAttribute(typeof(SlotAttribute));
+                if (value is RenderFragment renderFragment && attribute is SlotAttribute slot)
+                {
+                    slots.Add(slot.Value, renderFragment);
+                }
+            }
+
+            return slots;
+        }
+    }
+
+    private void RenderSlots(RenderTreeBuilder __builder)
+    {
+        @foreach(var (key, content) in ComponentSlots)
+        {
+            if (content is not null)
+            {
+                <div slot="@key">@content</div>
+            }
+        }
+    }
+}

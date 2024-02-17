@@ -1,0 +1,94 @@
+name: Release nuget and storybook on GH Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+env:
+  DOTNET_VERSION: "8.0.x"
+  NODE_VERSION: 20
+  NUGET_ORG: https://api.nuget.org/v3/index.json
+
+jobs:
+  prepare-artifacts:
+    runs-on: ubuntu-latest
+    env:
+      PROJECT_PATH: "src/AdaptiveBlazor/AdaptiveBlazor.csproj"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version:  ${{ env.NODE_VERSION }}
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build sln
+        run: dotnet build --no-restore -c Release
+
+      - name: Pack nugets
+        run: dotnet pack ${{ env.PROJECT_PATH }} --no-build -c Release -o ./artifacts/nugets
+        
+      - name: Upload nugets as artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: nugets
+          path: ./artifacts/nugets
+
+  push-to-nuget-org:
+    needs: prepare-artifacts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download nugets
+        uses: actions/download-artifact@v3
+        with:
+          name: nugets
+
+      - name: Setup NuGet.exe
+        uses: nuget/setup-nuget@v1
+        with:
+          nuget-version: 6.8.0
+
+      - name: Push nugets to github packages
+        run: nuget push "*.nupkg" -ApiKey ${{ secrets.NUGET_ORG_KEY }} -Source ${{ env.NUGET_ORG }} -SkipDuplicate
+
+  push-storybook-to-gh-pages:
+    runs-on: ubuntu-latest
+    env:
+      STORYBOOK_PROJECT_PATH: "src/AdaptiveBlazor.Storybook/AdaptiveBlazor.Storybook.csproj"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Install .NET WebAssembly Tools
+        run: dotnet workload install wasm-tools      
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version:  ${{ env.NODE_VERSION }}
+        
+      - name: Restore dependencies
+        run: dotnet restore          
+
+      - name: Generate storybook
+        run: dotnet publish ${{ env.STORYBOOK_PROJECT_PATH }} -c Release -o ./publish -p GHPages=true
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: ./publish/wwwroot

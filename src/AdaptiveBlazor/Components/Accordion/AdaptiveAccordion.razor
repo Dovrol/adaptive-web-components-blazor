@@ -1,0 +1,13 @@
+@namespace AdaptiveBlazor.Components
+@inherits AdaptiveComponentBase
+
+<CascadingValue Value="@this" IsFixed>
+    <adaptive-accordion id="@Id" 
+                        class="@Class" 
+                        style="@Style"
+                        expand-mode="@ExpandMode.ToAttribute()"
+                        @onaccordionchange="HandleAccordionChange"
+                        @attributes="AdditionalAttributes">
+        @ChildContent
+    </adaptive-accordion>
+</CascadingValue>

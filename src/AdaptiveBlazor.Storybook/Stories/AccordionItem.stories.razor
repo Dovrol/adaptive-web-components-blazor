@@ -1,0 +1,53 @@
+@attribute [Stories("Components/Accordion/Accordion item")]
+
+<Stories TComponent="@AdaptiveAccordionItem">
+    <Story Name="Default">
+        <Arguments>
+            <Arg For="_ => _.HeadingSlot" Value="@headingSlot(1)" />
+            <Arg For="_ => _.ChildContent" Value="@lorem" />
+        </Arguments>
+        <Template>
+            <AdaptiveAccordion>
+                <AdaptiveAccordionItem @attributes="context.Args">
+                </AdaptiveAccordionItem>
+            </AdaptiveAccordion>
+        </Template>
+    </Story>
+
+    <Story Name="Disabled">
+        <Arguments>
+            <Arg For="_ => _.Disabled" Value="true" />
+            <Arg For="_ => _.HeadingSlot" Value="@headingSlot(1)" />
+            <Arg For="_ => _.ChildContent" Value="@lorem" />
+        </Arguments>
+        <Template>
+            <AdaptiveAccordion>
+                <AdaptiveAccordionItem @attributes="context.Args">
+                </AdaptiveAccordionItem>
+            </AdaptiveAccordion>
+        </Template>
+    </Story>
+
+    <Story Name="Slots">
+        <Arguments>
+            <Arg For="_ => _.HeadingSlot" Value="@headingSlot(1)" />
+            <Arg For="_ => _.StartSlot" Value="@startSlot" />
+            <Arg For="_ => _.EndSlot" Value="@endSlot" />
+            <Arg For="_ => _.ChildContent" Value="@lorem" />
+        </Arguments>        
+        <Template>
+            <AdaptiveAccordion>
+                <AdaptiveAccordionItem @attributes="context.Args">
+                </AdaptiveAccordionItem>
+            </AdaptiveAccordion>
+        </Template>
+    </Story>
+</Stories>
+
+@code
+{
+    private RenderFragment headingSlot(int number) => @<text>Heading @number</text>;
+    private RenderFragment lorem = @<text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, dicta. Et voluptatum, illo sapiente culpa iste vero animi nesciunt at placeat repellendus earum illum omnis ducimus rem iusto commodi nihil.</text>;
+    private RenderFragment startSlot = @<text>Start slot</text>;
+    private RenderFragment endSlot = @<text>End slot</text>;
+}

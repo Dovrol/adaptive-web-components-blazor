@@ -178,6 +178,11 @@
             <param name="view">An argument for the <see cref="F:BlazingStory.Internals.Models.QueryRouteData.View"/> field</param>
             <param name="parameter">An argument for the <see cref="F:BlazingStory.Internals.Models.QueryRouteData.Parameter"/> field</param>
         </member>
+        <member name="F:BlazingStory.Internals.Models.Story.ComponentType">
+            <summary>
+            The type of the target UI component in this story.
+            </summary>
+        </member>
         <member name="F:BlazingStory.Internals.Models.Story.NavigationPath">
             <summary>
             Gets a navigation path string for this story.<br/>
@@ -248,6 +253,14 @@
             <summary>
             Removes the minimum indent from all lines of the given text.
             </summary>
+        </member>
+        <member name="M:BlazingStory.Internals.Services.Docs.StoriesRazorSource.UpdateSourceTextWithArgument(BlazingStory.Internals.Models.Story,System.String)">
+            <summary>
+            Updates the source code of the given story with the arguments of the given story.
+            </summary>
+            <param name="story">The story to update the source code.</param>
+            <param name="codeText">The source code of the story to update.</param>
+            <returns></returns>
         </member>
         <member name="M:BlazingStory.Internals.Services.Navigation.NavigationPath.Create(System.String,System.String)">
             <summary>
@@ -366,6 +379,22 @@
             </summary>
             <param name="buildMonthText">The text represents the month when this package was built.</param>
         </member>
+        <member name="M:BlazingStory.Internals.Utils.ExtensionMethods.Exclude(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.String[])">
+            <summary>
+            Returns a new dictionary that contains all the elements of the original dictionary except the ones with the specified keys.
+            </summary>
+            <param name="value">A dictionary to exclude the specified keys.</param>
+            <param name="keysToExclude">Key strings to exclude from the dictionary.</param>
+            <returns>A dictionary that contains all the elements of the original dictionary except the ones with the specified keys.</returns>
+        </member>
+        <member name="M:BlazingStory.Internals.Utils.ExtensionMethods.IsGenericTypeOf(System.Type,System.Type)">
+            <summary>
+            Returns the type is a generic type of the specified type.
+            </summary>
+            <param name="targetType">A type object to compare with the specified generics type.</param>
+            <param name="genericsType">A generics type to compare with the specified type.</param>
+            <returns>Returns true if the specified type is the specified generics type. otherwise, false.</returns>
+        </member>
         <member name="T:BlazingStory.Internals.Utils.RenderFragmentKit">
             <summary>
             The utility class for operations involved with <see cref="T:Microsoft.AspNetCore.Components.RenderFragment"/>.
@@ -393,7 +422,22 @@
             <param name="renderFragment">The <see cref="T:Microsoft.AspNetCore.Components.RenderFragment"/> to get the string content.</param>
             <returns>The string content what is the given <see cref="T:Microsoft.AspNetCore.Components.RenderFragment"/> renders.</returns>
         </member>
-        <member name="M:BlazingStory.Internals.Utils.RenderFragmentKit.ConvertTextToRenderFragmentT(System.Type,System.String)">
+        <member name="M:BlazingStory.Internals.Utils.RenderFragmentKit.FromString(System.String)">
+            <summary>
+            Convert the given string to <see cref="T:Microsoft.AspNetCore.Components.RenderFragment"/>.
+            </summary>
+            <param name="text">The string content what is the <see cref="T:Microsoft.AspNetCore.Components.RenderFragment`1"/> will render.</param>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Components.RenderFragment"/> that will render the given string content.</returns>
+        </member>
+        <member name="M:BlazingStory.Internals.Utils.RenderFragmentKit.FromString``1(System.String)">
+            <summary>
+            Convert the given string to <see cref="T:Microsoft.AspNetCore.Components.RenderFragment`1"/>.
+            </summary>
+            <typeparam name="T">The type argument of <see cref="T:Microsoft.AspNetCore.Components.RenderFragment`1"/>.</typeparam>
+            <param name="text">The string content what is the <see cref="T:Microsoft.AspNetCore.Components.RenderFragment`1"/> will render.</param>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Components.RenderFragment`1"/> that will render the given string content.</returns>
+        </member>
+        <member name="M:BlazingStory.Internals.Utils.RenderFragmentKit.FromString(System.Type,System.String)">
             <summary>
             Convert the given string to <see cref="T:Microsoft.AspNetCore.Components.RenderFragment`1"/>.
             </summary>

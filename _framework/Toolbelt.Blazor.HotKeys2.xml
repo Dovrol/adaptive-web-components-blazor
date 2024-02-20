@@ -592,7 +592,25 @@
             <param name="options">The options for this hotkey entry.</param>
             <returns>This context.</returns>
         </member>
+        <member name="M:Toolbelt.Blazor.HotKeys2.HotKeysContext.Add(Toolbelt.Blazor.HotKeys2.Key,System.Func{System.Threading.Tasks.Task},Toolbelt.Blazor.HotKeys2.HotKeyOptions)">
+            <summary>
+            Add a new hotkey entry to this context.
+            </summary>
+            <param name="key">The identifier of hotkey by key.</param>
+            <param name="action">The callback action that will be invoked when user enter the key without any modifiers on the browser.</param>
+            <param name="options">The options for this hotkey entry.</param>
+            <returns>This context.</returns>
+        </member>
         <member name="M:Toolbelt.Blazor.HotKeys2.HotKeysContext.Add(Toolbelt.Blazor.HotKeys2.Key,System.Func{Toolbelt.Blazor.HotKeys2.HotKeyEntryByKey,System.Threading.Tasks.ValueTask},Toolbelt.Blazor.HotKeys2.HotKeyOptions)">
+            <summary>
+            Add a new hotkey entry to this context.
+            </summary>
+            <param name="key">The identifier of hotkey by key.</param>
+            <param name="action">The callback action that will be invoked when user enter the key without any modifiers on the browser.</param>
+            <param name="options">The options for this hotkey entry.</param>
+            <returns>This context.</returns>
+        </member>
+        <member name="M:Toolbelt.Blazor.HotKeys2.HotKeysContext.Add(Toolbelt.Blazor.HotKeys2.Key,System.Func{Toolbelt.Blazor.HotKeys2.HotKeyEntryByKey,System.Threading.Tasks.Task},Toolbelt.Blazor.HotKeys2.HotKeyOptions)">
             <summary>
             Add a new hotkey entry to this context.
             </summary>
@@ -631,7 +649,27 @@
             <param name="description">The description of the meaning of this hot key entry.</param>
             <returns>This context.</returns>
         </member>
+        <member name="M:Toolbelt.Blazor.HotKeys2.HotKeysContext.Add(Toolbelt.Blazor.HotKeys2.Key,System.Func{System.Threading.Tasks.Task},System.String,Toolbelt.Blazor.HotKeys2.Exclude)">
+            <summary>
+            Add a new hotkey entry to this context.
+            </summary>
+            <param name="key">The identifier of hotkey by key.</param>
+            <param name="action">The callback action that will be invoked when user enter the key without any modifiers on the browser.</param>
+            <param name="exclude">The combination of HTML element flags that will be not allowed hotkey works.</param>
+            <param name="description">The description of the meaning of this hot key entry.</param>
+            <returns>This context.</returns>
+        </member>
         <member name="M:Toolbelt.Blazor.HotKeys2.HotKeysContext.Add(Toolbelt.Blazor.HotKeys2.Key,System.Func{Toolbelt.Blazor.HotKeys2.HotKeyEntryByKey,System.Threading.Tasks.ValueTask},System.String,Toolbelt.Blazor.HotKeys2.Exclude)">
+            <summary>
+            Add a new hotkey entry to this context.
+            </summary>
+            <param name="key">The identifier of hotkey by key.</param>
+            <param name="action">The callback action that will be invoked when user enter the key without any modifiers on the browser.</param>
+            <param name="exclude">The combination of HTML element flags that will be not allowed hotkey works.</param>
+            <param name="description">The description of the meaning of this hot key entry.</param>
+            <returns>This context.</returns>
+        </member>
+        <member name="M:Toolbelt.Blazor.HotKeys2.HotKeysContext.Add(Toolbelt.Blazor.HotKeys2.Key,System.Func{Toolbelt.Blazor.HotKeys2.HotKeyEntryByKey,System.Threading.Tasks.Task},System.String,Toolbelt.Blazor.HotKeys2.Exclude)">
             <summary>
             Add a new hotkey entry to this context.
             </summary>
@@ -671,7 +709,27 @@
             <param name="options">The options for this hotkey entry.</param>
             <returns>This context.</returns>
         </member>
+        <member name="M:Toolbelt.Blazor.HotKeys2.HotKeysContext.Add(Toolbelt.Blazor.HotKeys2.ModKey,Toolbelt.Blazor.HotKeys2.Key,System.Func{System.Threading.Tasks.Task},Toolbelt.Blazor.HotKeys2.HotKeyOptions)">
+            <summary>
+            Add a new hotkey entry to this context.
+            </summary>
+            <param name="modifiers">The combination of modifier keys flags.</param>
+            <param name="key">The identifier of hotkey by key.</param>
+            <param name="action">The callback action that will be invoked when user enter modifiers + key combination on the browser.</param>
+            <param name="options">The options for this hotkey entry.</param>
+            <returns>This context.</returns>
+        </member>
         <member name="M:Toolbelt.Blazor.HotKeys2.HotKeysContext.Add(Toolbelt.Blazor.HotKeys2.ModKey,Toolbelt.Blazor.HotKeys2.Key,System.Func{Toolbelt.Blazor.HotKeys2.HotKeyEntryByKey,System.Threading.Tasks.ValueTask},Toolbelt.Blazor.HotKeys2.HotKeyOptions)">
+            <summary>
+            Add a new hotkey entry to this context.
+            </summary>
+            <param name="modifiers">The combination of modifier keys flags.</param>
+            <param name="key">The identifier of hotkey by key.</param>
+            <param name="action">The callback action that will be invoked when user enter modifiers + key combination on the browser.</param>
+            <param name="options">The options for this hotkey entry.</param>
+            <returns>This context.</returns>
+        </member>
+        <member name="M:Toolbelt.Blazor.HotKeys2.HotKeysContext.Add(Toolbelt.Blazor.HotKeys2.ModKey,Toolbelt.Blazor.HotKeys2.Key,System.Func{Toolbelt.Blazor.HotKeys2.HotKeyEntryByKey,System.Threading.Tasks.Task},Toolbelt.Blazor.HotKeys2.HotKeyOptions)">
             <summary>
             Add a new hotkey entry to this context.
             </summary>
@@ -714,7 +772,29 @@
             <param name="description">The description of the meaning of this hot key entry.</param>
             <returns>This context.</returns>
         </member>
+        <member name="M:Toolbelt.Blazor.HotKeys2.HotKeysContext.Add(Toolbelt.Blazor.HotKeys2.ModKey,Toolbelt.Blazor.HotKeys2.Key,System.Func{System.Threading.Tasks.Task},System.String,Toolbelt.Blazor.HotKeys2.Exclude)">
+            <summary>
+            Add a new hotkey entry to this context.
+            </summary>
+            <param name="modifiers">The combination of modifier keys flags.</param>
+            <param name="key">The identifier of hotkey by key.</param>
+            <param name="action">The callback action that will be invoked when user enter modifiers + key combination on the browser.</param>
+            <param name="exclude">The combination of HTML element flags that will be not allowed hotkey works.</param>
+            <param name="description">The description of the meaning of this hot key entry.</param>
+            <returns>This context.</returns>
+        </member>
         <member name="M:Toolbelt.Blazor.HotKeys2.HotKeysContext.Add(Toolbelt.Blazor.HotKeys2.ModKey,Toolbelt.Blazor.HotKeys2.Key,System.Func{Toolbelt.Blazor.HotKeys2.HotKeyEntryByKey,System.Threading.Tasks.ValueTask},System.String,Toolbelt.Blazor.HotKeys2.Exclude)">
+            <summary>
+            Add a new hotkey entry to this context.
+            </summary>
+            <param name="modifiers">The combination of modifier keys flags.</param>
+            <param name="key">The identifier of hotkey by key.</param>
+            <param name="action">The callback action that will be invoked when user enter modifiers + key combination on the browser.</param>
+            <param name="description">The description of the meaning of this hot key entry.</param>
+            <param name="exclude">The combination of HTML element flags that will be not allowed hotkey works.</param>
+            <returns>This context.</returns>
+        </member>
+        <member name="M:Toolbelt.Blazor.HotKeys2.HotKeysContext.Add(Toolbelt.Blazor.HotKeys2.ModKey,Toolbelt.Blazor.HotKeys2.Key,System.Func{Toolbelt.Blazor.HotKeys2.HotKeyEntryByKey,System.Threading.Tasks.Task},System.String,Toolbelt.Blazor.HotKeys2.Exclude)">
             <summary>
             Add a new hotkey entry to this context.
             </summary>
@@ -763,7 +843,25 @@
             <param name="options">The options for this hotkey entry.</param>
             <returns>This context.</returns>
         </member>
+        <member name="M:Toolbelt.Blazor.HotKeys2.HotKeysContext.Add(Toolbelt.Blazor.HotKeys2.Code,System.Func{System.Threading.Tasks.Task},Toolbelt.Blazor.HotKeys2.HotKeyOptions)">
+            <summary>
+            Add a new hotkey entry to this context.
+            </summary>
+            <param name="code">The identifier of hotkey by code.</param>
+            <param name="action">The callback action that will be invoked when user enter the key without any modifiers on the browser.</param>
+            <param name="options">The options for this hotkey entry.</param>
+            <returns>This context.</returns>
+        </member>
         <member name="M:Toolbelt.Blazor.HotKeys2.HotKeysContext.Add(Toolbelt.Blazor.HotKeys2.Code,System.Func{Toolbelt.Blazor.HotKeys2.HotKeyEntryByCode,System.Threading.Tasks.ValueTask},Toolbelt.Blazor.HotKeys2.HotKeyOptions)">
+            <summary>
+            Add a new hotkey entry to this context.
+            </summary>
+            <param name="code">The identifier of hotkey by code.</param>
+            <param name="action">The callback action that will be invoked when user enter the key without any modifiers on the browser.</param>
+            <param name="options">The options for this hotkey entry.</param>
+            <returns>This context.</returns>
+        </member>
+        <member name="M:Toolbelt.Blazor.HotKeys2.HotKeysContext.Add(Toolbelt.Blazor.HotKeys2.Code,System.Func{Toolbelt.Blazor.HotKeys2.HotKeyEntryByCode,System.Threading.Tasks.Task},Toolbelt.Blazor.HotKeys2.HotKeyOptions)">
             <summary>
             Add a new hotkey entry to this context.
             </summary>
@@ -802,7 +900,27 @@
             <param name="description">The description of the meaning of this hot key entry.</param>
             <returns>This context.</returns>
         </member>
+        <member name="M:Toolbelt.Blazor.HotKeys2.HotKeysContext.Add(Toolbelt.Blazor.HotKeys2.Code,System.Func{System.Threading.Tasks.Task},System.String,Toolbelt.Blazor.HotKeys2.Exclude)">
+            <summary>
+            Add a new hotkey entry to this context.
+            </summary>
+            <param name="code">The identifier of hotkey by code.</param>
+            <param name="action">The callback action that will be invoked when user enter the key without any modifiers on the browser.</param>
+            <param name="exclude">The combination of HTML element flags that will be not allowed hotkey works.</param>
+            <param name="description">The description of the meaning of this hot key entry.</param>
+            <returns>This context.</returns>
+        </member>
         <member name="M:Toolbelt.Blazor.HotKeys2.HotKeysContext.Add(Toolbelt.Blazor.HotKeys2.Code,System.Func{Toolbelt.Blazor.HotKeys2.HotKeyEntryByCode,System.Threading.Tasks.ValueTask},System.String,Toolbelt.Blazor.HotKeys2.Exclude)">
+            <summary>
+            Add a new hotkey entry to this context.
+            </summary>
+            <param name="code">The identifier of hotkey by code.</param>
+            <param name="action">The callback action that will be invoked when user enter the key without any modifiers on the browser.</param>
+            <param name="exclude">The combination of HTML element flags that will be not allowed hotkey works.</param>
+            <param name="description">The description of the meaning of this hot key entry.</param>
+            <returns>This context.</returns>
+        </member>
+        <member name="M:Toolbelt.Blazor.HotKeys2.HotKeysContext.Add(Toolbelt.Blazor.HotKeys2.Code,System.Func{Toolbelt.Blazor.HotKeys2.HotKeyEntryByCode,System.Threading.Tasks.Task},System.String,Toolbelt.Blazor.HotKeys2.Exclude)">
             <summary>
             Add a new hotkey entry to this context.
             </summary>
@@ -842,7 +960,27 @@
             <param name="options">The options for this hotkey entry.</param>
             <returns>This context.</returns>
         </member>
+        <member name="M:Toolbelt.Blazor.HotKeys2.HotKeysContext.Add(Toolbelt.Blazor.HotKeys2.ModCode,Toolbelt.Blazor.HotKeys2.Code,System.Func{System.Threading.Tasks.Task},Toolbelt.Blazor.HotKeys2.HotKeyOptions)">
+            <summary>
+            Add a new hotkey entry to this context.
+            </summary>
+            <param name="modifiers">The combination of modifier keys flags.</param>
+            <param name="code">The identifier of hotkey by code.</param>
+            <param name="action">The callback action that will be invoked when user enter modifiers + key combination on the browser.</param>
+            <param name="options">The options for this hotkey entry.</param>
+            <returns>This context.</returns>
+        </member>
         <member name="M:Toolbelt.Blazor.HotKeys2.HotKeysContext.Add(Toolbelt.Blazor.HotKeys2.ModCode,Toolbelt.Blazor.HotKeys2.Code,System.Func{Toolbelt.Blazor.HotKeys2.HotKeyEntryByCode,System.Threading.Tasks.ValueTask},Toolbelt.Blazor.HotKeys2.HotKeyOptions)">
+            <summary>
+            Add a new hotkey entry to this context.
+            </summary>
+            <param name="modifiers">The combination of modifier keys flags.</param>
+            <param name="code">The identifier of hotkey by code.</param>
+            <param name="action">The callback action that will be invoked when user enter modifiers + key combination on the browser.</param>
+            <param name="options">The options for this hotkey entry.</param>
+            <returns>This context.</returns>
+        </member>
+        <member name="M:Toolbelt.Blazor.HotKeys2.HotKeysContext.Add(Toolbelt.Blazor.HotKeys2.ModCode,Toolbelt.Blazor.HotKeys2.Code,System.Func{Toolbelt.Blazor.HotKeys2.HotKeyEntryByCode,System.Threading.Tasks.Task},Toolbelt.Blazor.HotKeys2.HotKeyOptions)">
             <summary>
             Add a new hotkey entry to this context.
             </summary>
@@ -885,7 +1023,29 @@
             <param name="description">The description of the meaning of this hot key entry.</param>
             <returns>This context.</returns>
         </member>
+        <member name="M:Toolbelt.Blazor.HotKeys2.HotKeysContext.Add(Toolbelt.Blazor.HotKeys2.ModCode,Toolbelt.Blazor.HotKeys2.Code,System.Func{System.Threading.Tasks.Task},System.String,Toolbelt.Blazor.HotKeys2.Exclude)">
+            <summary>
+            Add a new hotkey entry to this context.
+            </summary>
+            <param name="modifiers">The combination of modifier keys flags.</param>
+            <param name="code">The identifier of hotkey by code.</param>
+            <param name="action">The callback action that will be invoked when user enter modifiers + key combination on the browser.</param>
+            <param name="exclude">The combination of HTML element flags that will be not allowed hotkey works.</param>
+            <param name="description">The description of the meaning of this hot key entry.</param>
+            <returns>This context.</returns>
+        </member>
         <member name="M:Toolbelt.Blazor.HotKeys2.HotKeysContext.Add(Toolbelt.Blazor.HotKeys2.ModCode,Toolbelt.Blazor.HotKeys2.Code,System.Func{Toolbelt.Blazor.HotKeys2.HotKeyEntryByCode,System.Threading.Tasks.ValueTask},System.String,Toolbelt.Blazor.HotKeys2.Exclude)">
+            <summary>
+            Add a new hotkey entry to this context.
+            </summary>
+            <param name="modifiers">The combination of modifier keys flags.</param>
+            <param name="code">The identifier of hotkey by code.</param>
+            <param name="action">The callback action that will be invoked when user enter modifiers + key combination on the browser.</param>
+            <param name="description">The description of the meaning of this hot key entry.</param>
+            <param name="exclude">The combination of HTML element flags that will be not allowed hotkey works.</param>
+            <returns>This context.</returns>
+        </member>
+        <member name="M:Toolbelt.Blazor.HotKeys2.HotKeysContext.Add(Toolbelt.Blazor.HotKeys2.ModCode,Toolbelt.Blazor.HotKeys2.Code,System.Func{Toolbelt.Blazor.HotKeys2.HotKeyEntryByCode,System.Threading.Tasks.Task},System.String,Toolbelt.Blazor.HotKeys2.Exclude)">
             <summary>
             Add a new hotkey entry to this context.
             </summary>

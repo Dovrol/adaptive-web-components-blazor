@@ -74,6 +74,74 @@
             Warning: currently there seems to be bug in awc implementation, as slot is not rendered correctly
             </summary>
         </member>
+        <member name="T:AdaptiveBlazor.Components.AdaptiveAnchor">
+            <summary>
+            An anchor is a piece of text which marks the beginning and/or the end of a hypertext link.
+            </summary>
+        </member>
+        <member name="P:AdaptiveBlazor.Components.AdaptiveAnchor.ChildContent">
+            <summary>
+            The default slot for anchor content
+            </summary>
+        </member>
+        <member name="P:AdaptiveBlazor.Components.AdaptiveAnchor.StartSlot">
+            <summary>
+            Content which can be provided before the anchor content
+            </summary>
+        </member>
+        <member name="P:AdaptiveBlazor.Components.AdaptiveAnchor.EndSlot">
+            <summary>
+            Content which can be provided after the anchor content
+            </summary>
+        </member>
+        <member name="P:AdaptiveBlazor.Components.AdaptiveAnchor.Download">
+            <summary>
+            Prompts the user to save the linked URL. <see href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">see a element</see> for more information.
+            HTML Attribute: download
+            </summary>
+        </member>
+        <member name="P:AdaptiveBlazor.Components.AdaptiveAnchor.Href">
+            <summary>
+            The URL the hyperlink references. <see href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">see a element</see> for more information.
+            HTML Attribute: href
+            </summary>
+        </member>
+        <member name="P:AdaptiveBlazor.Components.AdaptiveAnchor.Hreflang">
+            <summary>
+            Hints at the language of the referenced resource. <see href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">see a element</see> for more information.
+            HTML Attribute: hreflang
+            </summary>
+        </member>
+        <member name="P:AdaptiveBlazor.Components.AdaptiveAnchor.Ping">
+            <summary>
+            <see href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">see a element</see> for more information.
+            HTML Attribute: ping
+            </summary>    
+        </member>
+        <member name="P:AdaptiveBlazor.Components.AdaptiveAnchor.Referrerpolicy">
+            <summary>
+            <see href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">see a element</see> for more information.
+            HTML Attribute: referrerpolicy
+            </summary>    
+        </member>
+        <member name="P:AdaptiveBlazor.Components.AdaptiveAnchor.Rel">
+            <summary>
+            <see href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">see a element</see> for more information.
+            HTML Attribute: rel
+            </summary>    
+        </member>
+        <member name="P:AdaptiveBlazor.Components.AdaptiveAnchor.Target">
+            <summary>
+            <see href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">see a element</see> for more information.
+            HTML Attribute: target
+            </summary>    
+        </member>
+        <member name="P:AdaptiveBlazor.Components.AdaptiveAnchor.Type">
+            <summary>
+            <see href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">see a element</see> for more information.
+            HTML Attribute: type
+            </summary>    
+        </member>
         <member name="P:AdaptiveBlazor.Components.AdaptiveComponentBase.Id">
             <summary>
             Gets or sets the unique identifier.

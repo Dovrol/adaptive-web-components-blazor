@@ -1,0 +1,40 @@
+@namespace AdaptiveBlazor.Components
+@inherits AdaptiveComponentBase
+
+<adaptive-anchor
+    id="@Id" 
+    class="@Class" 
+    style="@Style"
+    download="@Download"
+    href="@Href"
+    hreflang="@Hreflang"
+    ping="@Ping"
+    referrerpolicy="@Referrerpolicy"
+    rel="@Rel"
+    target="@Target?.ToAttribute()"
+    type="@Type"
+    ariaAtomic="@AriaAtomic"
+    ariaBusy="@AriaBusy"
+    ariaControls="@AriaControls"
+    ariaCurrent="@AriaCurrent"
+    ariaDescribedby="@AriaDescribedby"
+    ariaDetails="@AriaDetails"
+    ariaDisabled="@AriaDisabled"
+    ariaErrormessage="@AriaErrormessage"
+    ariaExpanded="@AriaExpanded"
+    ariaFlowto="@AriaFlowto"
+    ariaHaspopup="@AriaHaspopup"
+    ariaHidden="@AriaHidden"
+    ariaInvalid="@AriaInvalid"
+    ariaKeyshortcuts="@AriaKeyshortcuts"
+    ariaLabel="@AriaLabel"
+    ariaLabelledby="@AriaLabelledby"
+    ariaLive="@AriaLive"
+    ariaOwns="@AriaOwns"
+    ariaRelevant="@AriaRelevant"
+    ariaRoledescription="@AriaRoledescription"
+    @attributes="AdditionalAttributes"
+    >
+    @Slots
+    @ChildContent
+</adaptive-anchor>

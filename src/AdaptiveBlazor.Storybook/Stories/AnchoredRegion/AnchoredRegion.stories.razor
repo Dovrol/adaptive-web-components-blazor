@@ -1,9 +1,198 @@
-@attribute [Stories("Components/AnchoredRegion")]
+@attribute [Stories("Components/Anchored region")]
 
-<Stories TComponent="@AdaptiveAnchoredRegion">
+<Stories TComponent="@AdaptiveAnchoredRegion" Layout="typeof(AnchoredRegionLayout)">
     <Story Name="Default">
+        <Arguments>
+            <Arg For="_ => _.Anchor" Value="@anchorId" />
+        </Arguments>
         <Template>
-            <AdaptiveAnchoredRegion @attributes="context.Args"></AdaptiveAnchoredRegion>
+            <adaptive-button id="@anchorId">This is anchor</adaptive-button>
+
+            <AdaptiveAnchoredRegion @attributes="context.Args">
+                <adaptive-menu>
+                    <adaptive-menu-item>
+                        Item 1
+                    </adaptive-menu-item>
+                    <adaptive-menu-item>
+                        Item 2
+                    </adaptive-menu-item>
+                </adaptive-menu>
+            </AdaptiveAnchoredRegion>
+        </Template>
+    </Story>
+
+    <Story Name="Relative placement: Adjacent vertically and inset horizontally">
+        @* TODO add as description  *@
+        @* By default the anchored region is positioned adjacent to the element it is anchored to, but if the "horizontal-inset" or "vertical-inset" attributes are set then the region will be 'inset' and overlap the anchor on that axis. Various combinations of these attributes can enable some commonly desired layouts. In the following images the menu would be considered to be the anchored region and the "Select an option" button the anchor. *@
+        <Arguments>
+            <Arg For="_ => _.Anchor" Value="@anchorId" />
+            <Arg For="_ => _.HorizontalInset" Value="true" />
+        </Arguments>
+        <Template>
+            <adaptive-button id="@anchorId">This is anchor</adaptive-button>
+
+            <AdaptiveAnchoredRegion @attributes="context.Args">
+                <adaptive-menu>
+                    <adaptive-menu-item>
+                        Item 1
+                    </adaptive-menu-item>
+                    <adaptive-menu-item>
+                        Item 2
+                    </adaptive-menu-item>
+                </adaptive-menu>
+            </AdaptiveAnchoredRegion>
+        </Template>
+    </Story>
+    <Story Name="Relative placement: Inset vertically and adjacent horizontally">
+        <Arguments>
+            <Arg For="_ => _.Anchor" Value="@anchorId" />
+            <Arg For="_ => _.VerticalInset" Value="true" />
+        </Arguments>
+        <Template>
+            <adaptive-button id="@anchorId">This is anchor</adaptive-button>
+
+            <AdaptiveAnchoredRegion @attributes="context.Args">
+                <adaptive-menu>
+                    <adaptive-menu-item>
+                        Item 1
+                    </adaptive-menu-item>
+                    <adaptive-menu-item>
+                        Item 2
+                    </adaptive-menu-item>
+                </adaptive-menu>
+            </AdaptiveAnchoredRegion>
+        </Template>
+    </Story>
+    <Story Name="Relative placement: Inset on both axis positions">
+        <Arguments>
+            <Arg For="_ => _.Anchor" Value="@anchorId" />
+            <Arg For="_ => _.HorizontalInset" Value="true" />
+            <Arg For="_ => _.VerticalInset" Value="true" />
+        </Arguments>
+        <Template>
+            <adaptive-button id="@anchorId" style="min-width: 200px;">This is anchor</adaptive-button>
+
+            <AdaptiveAnchoredRegion @attributes="context.Args">
+                <adaptive-menu>
+                    <adaptive-menu-item>
+                        Item 1
+                    </adaptive-menu-item>
+                    <adaptive-menu-item>
+                        Item 2
+                    </adaptive-menu-item>
+                </adaptive-menu>
+            </AdaptiveAnchoredRegion>
+        </Template>
+    </Story>
+    <Story Name="Relative placement: Adjacent on both axis positions">
+        <Arguments>
+            <Arg For="_ => _.Anchor" Value="@anchorId" />
+        </Arguments>
+        <Template>
+            <adaptive-button id="@anchorId">This is anchor</adaptive-button>
+
+            <AdaptiveAnchoredRegion @attributes="context.Args">
+                <adaptive-menu>
+                    <adaptive-menu-item>
+                        Item 1
+                    </adaptive-menu-item>
+                    <adaptive-menu-item>
+                        Item 2
+                    </adaptive-menu-item>
+                </adaptive-menu>
+            </AdaptiveAnchoredRegion>
+        </Template>
+    </Story>
+    <Story Name="A region that always renders above the anchor element.">
+        <Arguments>
+            <Arg For="_ => _.Anchor" Value="@anchorId" />
+            <Arg For="_ => _.VerticalPositioningMode" Value="@AxisPositioningMode.Locktodefault" />
+            <Arg For="_ => _.VerticalDefaultPosition" Value="@VerticalPosition.Top" />
+        </Arguments>
+        <Template>
+            <adaptive-button id="@anchorId" style="align-self: flex-start;">This is anchor</adaptive-button>
+
+            <AdaptiveAnchoredRegion @attributes="context.Args">
+                <adaptive-menu>
+                    <adaptive-menu-item>
+                        Item 1
+                    </adaptive-menu-item>
+                    <adaptive-menu-item>
+                        Item 2
+                    </adaptive-menu-item>
+                </adaptive-menu>
+            </AdaptiveAnchoredRegion>
+        </Template>
+    </Story>
+    <Story Name="A region that renders above or below the anchor depending on available space.">
+        <Arguments>
+            <Arg For="_ => _.Anchor" Value="@anchorId" />
+            <Arg For="_ => _.VerticalPositioningMode" Value="@AxisPositioningMode.Dynamic" />
+        </Arguments>
+        <Template>
+            <adaptive-button id="@anchorId" style="align-self: flex-start;">This is anchor</adaptive-button>
+
+            <AdaptiveAnchoredRegion @attributes="context.Args">
+                <adaptive-menu>
+                    <adaptive-menu-item>
+                        Item 1
+                    </adaptive-menu-item>
+                    <adaptive-menu-item>
+                        Item 2
+                    </adaptive-menu-item>
+                </adaptive-menu>
+            </AdaptiveAnchoredRegion>
+        </Template>
+    </Story>
+    <Story Name="A region that overlaps the anchor and renders above or below it depending on available space.">
+        <Arguments>
+            <Arg For="_ => _.Anchor" Value="@anchorId" />
+            <Arg For="_ => _.VerticalPositioningMode" Value="@AxisPositioningMode.Dynamic" />
+            <Arg For="_ => _.VerticalInset" Value="true" />
+        </Arguments>
+        <Template>
+            <adaptive-button id="@anchorId" style="align-self: flex-end;">This is anchor</adaptive-button>
+
+            <AdaptiveAnchoredRegion @attributes="context.Args">
+                <adaptive-menu>
+                    <adaptive-menu-item>
+                        Item 1
+                    </adaptive-menu-item>
+                    <adaptive-menu-item>
+                        Item 2
+                    </adaptive-menu-item>
+                </adaptive-menu>
+            </AdaptiveAnchoredRegion>
+        </Template>
+    </Story>
+    <Story Name="A region that renders above the anchor until that space is less than 250px.">
+        <Arguments>
+            <Arg For="_ => _.Anchor" Value="@anchorId" />
+            <Arg For="_ => _.VerticalPositioningMode" Value="@AxisPositioningMode.Dynamic" />
+            <Arg For="_ => _.VerticalDefaultPosition" Value="@VerticalPosition.Top" />
+            <Arg For="_ => _.VerticalThreshold" Value="250" />
+        </Arguments>
+        <Template>
+            <adaptive-button id="@anchorId" style="align-self: center;">This is anchor</adaptive-button>
+
+            <AdaptiveAnchoredRegion @attributes="context.Args">
+                <adaptive-menu>
+                    <adaptive-menu-item>
+                        Item 1
+                    </adaptive-menu-item>
+                    <adaptive-menu-item>
+                        Item 2
+                    </adaptive-menu-item>
+                </adaptive-menu>
+            </AdaptiveAnchoredRegion>
         </Template>
     </Story>
 </Stories>
+
+
+
+
+@code
+{
+    private string anchorId = "anchor";
+}

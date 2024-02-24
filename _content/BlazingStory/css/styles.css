@@ -536,11 +536,18 @@ button {
 }
 
 .navigation-tree {
+  min-width: 100%;
+  display: inline-flex;
+  flex-direction: column;
   /* for Active Story or Docs */
   /* ---- Chevron ---- */
   /* ---- Sub Items ---- */
   /* ---- Sub Heading ---- */
   /* ---- Icons ---- */
+}
+.navigation-tree .navigation-tree-item {
+  display: inline-flex;
+  flex-direction: column;
 }
 .navigation-tree .caption {
   height: 24px;
@@ -555,6 +562,7 @@ button {
   background-color: transparent;
   cursor: pointer;
   height: 100%;
+  white-space: nowrap;
 }
 .navigation-tree .caption .action {
   align-items: center;
@@ -562,8 +570,8 @@ button {
   font-stretch: 100%;
   display: flex;
   flex-wrap: nowrap;
-  width: 100%;
-  padding: 0;
+  flex: 1;
+  padding: 0 12px 0 0;
   appearance: none;
   text-decoration: none;
 }
@@ -610,7 +618,8 @@ button {
   display: none;
 }
 .navigation-tree .expanded > .sub-items {
-  display: block;
+  display: inline-flex;
+  flex-direction: column;
 }
 .navigation-tree .caption.sub-heading {
   height: 20px;
@@ -997,6 +1006,18 @@ a.icon-button {
   cursor: pointer;
 }
 
+.null-input-radio {
+  display: flex;
+  gap: 6px;
+  padding: 0 12px;
+  font-size: var(--bs-text-size);
+  height: 28px;
+  color: var(--bs-dimmed-text-color);
+  border: solid 1px var(--bs-border-color);
+  border-radius: 24px;
+  background-color: var(--bs-dimmed-back-color);
+}
+
 .select svg {
   position: absolute;
   z-index: 1;
@@ -1256,6 +1277,35 @@ a.icon-button {
 }
 .controls-panel table th.control, .controls-panel table td.control {
   padding: 10px 20px 10px 15px;
+}
+
+.bool-parameter-controller {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  align-items: center;
+}
+.bool-parameter-controller label {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.bool-parameter-controller label .toggle-button {
+  margin: 0;
+}
+
+.number-parameter-controller {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+.number-parameter-controller label {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.number-parameter-controller .input-value {
+  flex: 1;
 }
 
 .actions-panel {

@@ -462,12 +462,13 @@
             Get name of the type as a C# language keyword.
             </summary>
         </member>
-        <member name="M:BlazingStory.Internals.Utils.TypeUtility.TryConvertType(System.Type,System.String,System.Object@)">
+        <member name="M:BlazingStory.Internals.Utils.TypeUtility.TryConvertType(System.Type,BlazingStory.Internals.Utils.TypeStructure,System.String,System.Object@)">
             <summary>
             Try to convert the given string to the given type.<br/>
             (Most cases, this method uses for deserialize URL query parameters of iframe to component parameters.)
             </summary>
             <param name="targetType">The type to convert to.</param>
+            <param name="targetTypeStructure">The structure of the type to convert to.</param>
             <param name="sourceString">The string to convert from.</param>
             <param name="convertedValue">The converted value if the conversion is successful.</param>
             <returns>True if the conversion is successful, otherwise false.</returns>
@@ -522,6 +523,16 @@
         <member name="F:BlazingStory.Types.AvailableColorSchemes.Both">
             <summary>Both the light and dark color schemes are available.</summary>
         </member>
+        <member name="T:BlazingStory.Types.RenderMode">
+            <summary>
+            Provides pre-constructed <see cref="T:Microsoft.AspNetCore.Components.IComponentRenderMode"/> instances that may be used during rendering.
+            </summary>
+        </member>
+        <member name="F:BlazingStory.Types.RenderMode.InteractiveServerNoPreRender">
+            <summary>
+            Gets an <see cref="T:Microsoft.AspNetCore.Components.IComponentRenderMode"/> that represents rendering interactively on the server via Blazor Server hosting. (without server-side prerendering.)
+            </summary>
+        </member>
         <member name="E:BlazingStory.Types.StoryContext.ShouldRender">
             <summary>
             This event is used to notify the story that it should re-render.
@@ -536,6 +547,16 @@
             <summary>
             This method is used to notify the story that it should re-render.
             </summary>
+        </member>
+        <member name="M:BlazingStory.Types.StoryContext.ConvertParameterValueToString(System.String,System.Object)">
+            <summary>
+            Convert the given parameter value to a string.<br/>
+            If the value is an instance of <see cref="T:Microsoft.AspNetCore.Components.RenderFragment"/> or <see cref="T:Microsoft.AspNetCore.Components.RenderFragment`1"/>, this method returns the string that will be rendered by that render fragment.<br/>
+            If the value is an instance of <see cref="T:System.Nullable`1"/>, this method returns "(null)" if the value is null.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+            <returns>The string representation of the parameter value.</returns>
         </member>
     </members>
 </doc>

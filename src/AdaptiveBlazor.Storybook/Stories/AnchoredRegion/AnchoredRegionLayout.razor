@@ -1,0 +1,28 @@
+@inherits LayoutComponentBase
+@layout DefaultLayout
+
+<div id="wrapper">
+    <div id="anchored-region-content">
+        @Body
+    </div>
+</div>
+
+
+<style>
+    #wrapper
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #anchored-region-content
+    {
+        min-height: 200px; 
+        min-width: 500px; 
+        display: flex; 
+        border: 1px solid; 
+        align-items: center;
+    }
+</style>

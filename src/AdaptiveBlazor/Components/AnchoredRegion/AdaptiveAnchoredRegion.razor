@@ -1,0 +1,27 @@
+@namespace AdaptiveBlazor.Components
+@inherits AdaptiveComponentBase
+
+<adaptive-anchored-region
+    id="@Id" 
+    class="@Class" 
+    style="@Style"
+    anchor="@Anchor"
+    viewport="@Viewport"
+    horizontal-positioning-mode="@HorizontalPositioningMode?.ToAttribute()"
+    horizontal-default-position="@HorizontalDefaultPosition?.ToAttribute()"
+    horizontal-viewport-lock=@HorizontalViewportLock
+    horizontal-inset="@HorizontalInset"
+    horizontal-threshold="@HorizontalThreshold"
+    horizontal-scaling="@HorizontalScaling?.ToAttribute()"
+    vertical-positioning-mode="@VerticalPositioningMode?.ToAttribute()"
+    vertical-default-position="@VerticalDefaultPosition?.ToAttribute()"
+    vertical-viewport-lock=@VerticalViewportLock
+    vertical-inset="@VerticalInset"
+    vertical-threshold="@VerticalThreshold"
+    vertical-scaling="@VerticalScaling?.ToAttribute()"
+    fixed-placement=@FixedPlacement
+    auto-update-mode="@AutoUpdateMode?.ToAttribute()"
+    @attributes="AdditionalAttributes">
+
+    @ChildContent
+</adaptive-anchored-region>

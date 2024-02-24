@@ -62,7 +62,7 @@ public partial class AdaptiveAnchor
     /// <see href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">see a element</see> for more information.
     /// HTML Attribute: target
     /// </summary>    
-    [Parameter] public AnchorTarget? Target { get; set; } = AnchorTarget.Self;
+    [Parameter] public AnchorTarget? Target { get; set; }
 
     /// <summary>
     /// <see href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">see a element</see> for more information.

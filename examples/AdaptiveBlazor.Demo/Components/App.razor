@@ -7,6 +7,9 @@
     <base href="/" />
     <link rel="stylesheet" href="app.css" />
     <link rel="stylesheet" href="AdaptiveBlazor.Demo.styles.css" />
+
+    @* Avoid web component flickering - FOUC *@
+    <style>*:not(:defined){visibility:hidden}</style>
     <HeadOutlet />
 </head>
 

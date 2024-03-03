@@ -1,0 +1,18 @@
+@attribute [Stories("Components/Badge")]
+
+<Stories TComponent="@AdaptiveBadge">
+    <Story Name="Default">
+        <Arguments>
+            <Arg For="_ => _.ChildContent" Value="@defaultSlot" />
+        </Arguments>
+        <Template>
+            <AdaptiveBadge @attributes="context.Args">
+            </AdaptiveBadge>
+        </Template>
+    </Story>
+</Stories>
+
+@code
+{
+    private RenderFragment defaultSlot = @<text>Badge</text>;
+}

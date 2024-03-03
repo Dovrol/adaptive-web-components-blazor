@@ -9,7 +9,15 @@ namespace AdaptiveBlazor.Components;
 public partial class AdaptiveAvatar
 {
     /// <summary>
-    /// The default slot for the content
+    /// The default slot for avatar text, commonly a name or initials
     /// </summary>
     [Parameter] public RenderFragment? ChildContent { get; set; }
+    /// <summary>
+    /// Used for media such as an image
+    /// </summary>
+    [Parameter, Slot("media")] public RenderFragment? MediaSlot { get; set; }
+    /// <summary>
+    /// Used to provide a badge, such as a status badge
+    /// </summary>
+    [Parameter, Slot("badge")] public RenderFragment? BadgeSlot { get; set; }
 }

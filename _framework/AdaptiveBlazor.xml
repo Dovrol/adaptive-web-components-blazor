@@ -282,6 +282,38 @@
             Values to define the base behavior of an anchored region on a particular axis
             </summary>
         </member>
+        <member name="T:AdaptiveBlazor.Components.AdaptiveAvatar">
+            <summary>
+            An avatar is a graphical representation of a user or object.
+            A common use case would be to display an image or text (usually initials) of a user or an object, such as in a user profile.
+            </summary>
+        </member>
+        <member name="P:AdaptiveBlazor.Components.AdaptiveAvatar.ChildContent">
+            <summary>
+            The default slot for avatar text, commonly a name or initials
+            </summary>
+        </member>
+        <member name="P:AdaptiveBlazor.Components.AdaptiveAvatar.MediaSlot">
+            <summary>
+            Used for media such as an image
+            </summary>
+        </member>
+        <member name="P:AdaptiveBlazor.Components.AdaptiveAvatar.BadgeSlot">
+            <summary>
+            Used to provide a badge, such as a status badge
+            </summary>
+        </member>
+        <member name="T:AdaptiveBlazor.Components.AdaptiveBadge">
+            <summary>
+            Badge component is used to highlight an item and attract attention or flag status, such as “New”, “Sale”, or other short phrases or a number to represent unread messages, updates available, etc..
+            Typical use cases include, but are not limited to, denoting a sale or new item, flagging an item as part of a category or representing a value of unread messages.
+            </summary>
+        </member>
+        <member name="P:AdaptiveBlazor.Components.AdaptiveBadge.ChildContent">
+            <summary>
+            The default slot for the badge
+            </summary>
+        </member>
         <member name="P:AdaptiveBlazor.Components.AdaptiveComponentBase.Id">
             <summary>
             Gets or sets the unique identifier.

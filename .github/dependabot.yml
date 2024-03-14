@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: "nuget"
+    directory: "/src/AdaptiveBlazor/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "nuget"
+    directory: "/src/AdaptiveBlazor.Storybook/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "npm"
+    directory: "/src/AdaptiveBlazor.Assets/"
+    schedule:
+      interval: "daily"

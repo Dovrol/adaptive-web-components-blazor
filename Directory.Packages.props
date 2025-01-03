@@ -1,14 +1,14 @@
 <Project>
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-    <AspNetCoreVersion>8.0.7</AspNetCoreVersion>
+    <AspNetCoreVersion>8.0.11</AspNetCoreVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="$(AspNetCoreVersion)" />
     <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly" Version="$(AspNetCoreVersion)" />
     <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="$(AspNetCoreVersion)" PrivateAssets="all" />
 
-    <PackageVersion Include="BlazingStory" Version="1.0.0-preview.40" />
-    <PackageVersion Include="PublishSPAforGitHubPages.Build" Version="2.2.0" />
+    <PackageVersion Include="BlazingStory" Version="1.0.0-preview.41" />
+    <PackageVersion Include="PublishSPAforGitHubPages.Build" Version="3.0.0" />
   </ItemGroup>
 </Project>

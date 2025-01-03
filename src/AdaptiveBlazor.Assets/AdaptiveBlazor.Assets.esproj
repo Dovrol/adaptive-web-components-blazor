@@ -1,11 +1,6 @@
-<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/1.0.668313">
+<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/1.0.2206083">
 	<PropertyGroup>
-		<DefaultProjectTypeGuid Condition="'$(BuildingInsideVisualStudio)' == 'false'">FAE04EC0-301F-11D3-BF4B-00C04F79EFBC</DefaultProjectTypeGuid>
 		<DebugAssetsDirectory>dist\</DebugAssetsDirectory>
 		<StaticWebAssetSourceId>AdaptiveBlazor</StaticWebAssetSourceId>
-		<IsPackable>false</IsPackable>
 	</PropertyGroup>
-
-	<Target Name="Pack" />
-
 </Project>
